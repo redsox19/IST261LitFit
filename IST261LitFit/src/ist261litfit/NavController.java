@@ -32,8 +32,8 @@ public class NavController {
 
     }
     
-    public void createFood(String foodName, int calories){
-       Food foodObj = new Food(foodName, calories, this);
+    public void createFood(String foodName, int calories, int carbs, int fat, int protein){
+       Food foodObj = new Food(this, foodName, calories, protein, carbs, fat );
        this.foodLog.addFood(foodObj);
     }
     

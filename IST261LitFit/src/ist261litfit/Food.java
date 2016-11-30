@@ -18,7 +18,7 @@ public class Food {
     private int gramsFat;
     
     
-    public Food(String food, int cal, NavController controller){
+    public Food( NavController controller, String food, int cal, int protein, int carbs, int fat){
         this.foodName = food;
         this.foodCalories = cal;
         this.controller = controller;
