@@ -22,6 +22,10 @@ public class Food {
         this.foodName = food;
         this.foodCalories = cal;
         this.controller = controller;
+        this.gramsProtein = protein;
+        this.carbs = carbs;
+        this.gramsFat = fat;
+                
         System.out.println(foodName + " " + foodCalories);
     }
 
