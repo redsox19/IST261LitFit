@@ -16,6 +16,9 @@ public class LogListUI extends javax.swing.JFrame {
      private DefaultTableModel model;
      private int totalCalories;
      private int totalProtein;
+     private int totalCarbs;
+     private int totalFat;
+             
     /**
      * Creates new form LogListUI
      */
@@ -50,7 +53,7 @@ public class LogListUI extends javax.swing.JFrame {
         totalCaloriesLabel = new javax.swing.JLabel();
         totalProteinLabel = new javax.swing.JLabel();
         totalCarbsLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        totalFatLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,7 +95,7 @@ public class LogListUI extends javax.swing.JFrame {
 
         totalCarbsLabel.setText("Carbs");
 
-        jLabel2.setText("Fat");
+        totalFatLabel.setText("Fat");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,7 +124,7 @@ public class LogListUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(totalCarbsLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
+                        .addComponent(totalFatLabel)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -143,7 +146,7 @@ public class LogListUI extends javax.swing.JFrame {
                     .addComponent(totalCaloriesLabel)
                     .addComponent(totalProteinLabel)
                     .addComponent(totalCarbsLabel)
-                    .addComponent(jLabel2))
+                    .addComponent(totalFatLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton)
@@ -167,13 +170,17 @@ public class LogListUI extends javax.swing.JFrame {
         this.logTitle.setText(title);
     }
     
-    public void addFoodTable(String name, int calories, int protein, int calcium){
-        model.addRow(new Object[] {name, calories, protein, calcium});
+    public void addFoodTable(String name, int calories, int protein, int carbs, int fat){
+        model.addRow(new Object[] {name, calories, protein, carbs, fat});
         this.foodTable.setModel(model);
         this.totalCalories += calories;
         this.totalProtein += protein;
+        this.totalCarbs += carbs;
+        this.totalFat += fat;
         this.totalCaloriesLabel.setText(Integer.toString(totalCalories));
         this.totalProteinLabel.setText(Integer.toString(totalProtein) + "g");
+        this.totalFatLabel.setText(Integer.toString(totalFat) + "g");
+        this.totalCarbsLabel.setText(Integer.toString(totalCarbs));
     }
     /**
      * @param args the command line arguments
@@ -214,13 +221,13 @@ public class LogListUI extends javax.swing.JFrame {
     private javax.swing.JButton backButton;
     private javax.swing.JTable foodTable;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel logTitle;
     private javax.swing.JLabel loglable;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel totalCaloriesLabel;
     private javax.swing.JLabel totalCarbsLabel;
+    private javax.swing.JLabel totalFatLabel;
     private javax.swing.JLabel totalProteinLabel;
     // End of variables declaration//GEN-END:variables
 }

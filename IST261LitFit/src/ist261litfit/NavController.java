@@ -58,7 +58,7 @@ public class NavController {
         // add food to table in the log view. This works just fine
         ArrayList<Food> searchFoodList = this.searchLog.getFoodLog();
         searchFoodList.forEach((item) -> {
-            this.logUI.addFoodTable(item.getFoodName(),item.getFoodCalories(),50,50); //iterate through foods in list and sned the data. 50's are placeholders/ 
+            this.logUI.addFoodTable(item.getFoodName(),item.getFoodCalories(),item.getGramsProtein(),item.getCarbs(),item.getGramsFat()); //iterate through foods in list and sned the data. 50's are placeholders/ 
         });
     }
     

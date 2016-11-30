@@ -48,7 +48,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="totalCarbsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="totalFatLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -76,7 +76,7 @@
                   <Component id="totalCaloriesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="totalProteinLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="totalCarbsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalFatLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="87" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -195,7 +195,7 @@
         <Property name="text" type="java.lang.String" value="Carbs"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="totalFatLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fat"/>
       </Properties>
