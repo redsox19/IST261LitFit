@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package ist261litfit;
+//import com.google.*;
 
-/**
- *
- * @author drf5180
- */
+
 public class IST261LitFit {
 
     /**
