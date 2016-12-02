@@ -51,15 +51,16 @@ public class NavController {
         this.logUI = new LogListUI(this);
         this.logUI.setVisible(true);
         String tempTitle = this.view.getLogTitle();
-        this.logUI.changeLogName(tempTitle);
+        this.logUI.changeLogName(tempTitle); // set logListUi title
         System.out.println("This is the searched log ID: " + this.view.getLogID());
-        searchFoodLog(this.view.getLogID()); // what does this do? should get log number from jlist
-     
+        searchFoodLog(this.view.getLogID()); 
+        this.logUI.changeIndexNumber(this.view.getLogID());
         // add food to table in the log view. This works just fine
         ArrayList<Food> searchFoodList = this.searchLog.getFoodLog();
         searchFoodList.forEach((item) -> {
             this.logUI.addFoodTable(item.getFoodName(),item.getFoodCalories(),item.getGramsProtein(),item.getCarbs(),item.getGramsFat()); //iterate through foods in list and sned the data. 50's are placeholders/ 
         });
+           
     }
     
     public void switchMainView(){
@@ -82,6 +83,7 @@ public class NavController {
     
     public void saveLog(){
         
-    }
+         }
+    
     
 }

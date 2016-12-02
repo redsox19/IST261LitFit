@@ -43,6 +43,8 @@ public class LogListUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         loglable = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         foodTable = new javax.swing.JTable();
@@ -54,10 +56,20 @@ public class LogListUI extends javax.swing.JFrame {
         totalProteinLabel = new javax.swing.JLabel();
         totalCarbsLabel = new javax.swing.JLabel();
         totalFatLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        indexLabel = new javax.swing.JLabel();
+        loglable2 = new javax.swing.JLabel();
+
+        jLabel6.setText("jLabel6");
+
+        jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        loglable.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        loglable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         loglable.setText("Log: ");
 
         foodTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -84,10 +96,11 @@ public class LogListUI extends javax.swing.JFrame {
             }
         });
 
-        logTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        logTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         logTitle.setText("Title");
 
-        jLabel1.setText("Total:");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Totals");
 
         totalCaloriesLabel.setText("Calories");
 
@@ -97,39 +110,69 @@ public class LogListUI extends javax.swing.JFrame {
 
         totalFatLabel.setText("Fat");
 
+        jLabel2.setText("Calories:");
+
+        jLabel3.setText("Protein:");
+
+        jLabel4.setText("Carbs:");
+
+        jLabel5.setText("Fat:");
+
+        indexLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        indexLabel.setText("#");
+
+        loglable2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        loglable2.setText("Index:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(loglable)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logTitle)
-                .addContainerGap(98, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(backButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(saveButton)
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(29, 29, 29)
-                        .addComponent(totalCaloriesLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(totalProteinLabel)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 6, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalCarbsLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(totalFatLabel)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(totalCaloriesLabel)
+                            .addComponent(totalProteinLabel))
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(totalCarbsLabel))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(totalFatLabel)
+                                .addGap(12, 12, 12)))
+                        .addGap(49, 49, 49))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(loglable)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(logTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(loglable2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(indexLabel)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,17 +180,27 @@ public class LogListUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loglable)
-                    .addComponent(logTitle))
+                    .addComponent(logTitle)
+                    .addComponent(indexLabel)
+                    .addComponent(loglable2))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
                     .addComponent(totalCaloriesLabel)
-                    .addComponent(totalProteinLabel)
                     .addComponent(totalCarbsLabel)
-                    .addComponent(totalFatLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(totalFatLabel)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(totalProteinLabel)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton)
                     .addComponent(saveButton))
@@ -168,8 +221,12 @@ public class LogListUI extends javax.swing.JFrame {
     
     public void changeLogName(String title){
         this.logTitle.setText(title);
+       
     }
-    
+    public void changeIndexNumber(int indexNum){
+        this.indexLabel.setText(Integer.toString(indexNum));
+       
+    }
     public void addFoodTable(String name, int calories, int protein, int carbs, int fat){
         model.addRow(new Object[] {name, calories, protein, carbs, fat});
         this.foodTable.setModel(model);
@@ -220,10 +277,18 @@ public class LogListUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JTable foodTable;
+    private javax.swing.JLabel indexLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel logTitle;
     private javax.swing.JLabel loglable;
+    private javax.swing.JLabel loglable2;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel totalCaloriesLabel;
     private javax.swing.JLabel totalCarbsLabel;
