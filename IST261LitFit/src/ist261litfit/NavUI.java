@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package ist261litfit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 /**
  *
@@ -53,6 +56,7 @@ public class NavUI extends javax.swing.JFrame {
         fatTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         proteinTextField = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +109,13 @@ public class NavUI extends javax.swing.JFrame {
 
         jLabel9.setText("Protein:");
 
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,7 +154,9 @@ public class NavUI extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(completeButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(saveButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(editButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
@@ -199,9 +212,12 @@ public class NavUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(completeButton)
-                    .addComponent(editButton))
+                    .addComponent(editButton)
+                    .addComponent(saveButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        saveButton.getAccessibleContext().setAccessibleName("SaveButton");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -238,6 +254,15 @@ public class NavUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.controller.switchLogView();
     }//GEN-LAST:event_editButtonActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+         try {
+            this.controller.gsonSave();
+        } catch (IOException ex) {
+            Logger.getLogger(NavUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_saveButtonActionPerformed
 
     public void addFoodLog(String logName,int logNumber){
        model.addElement(logNumber +"."+ logName);
@@ -315,6 +340,7 @@ public class NavUI extends javax.swing.JFrame {
     private javax.swing.JList logList;
     private javax.swing.JTextField logNameField;
     private javax.swing.JTextField proteinTextField;
+    private javax.swing.JButton saveButton;
     private javax.swing.JButton submitFoodButton;
     // End of variables declaration//GEN-END:variables
 }
