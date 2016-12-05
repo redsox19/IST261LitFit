@@ -4,17 +4,16 @@
  * and open the template in the editor.
  */
 package ist261litfit;
-//import com.google.*;
+import java.io.*;
 
 
 public class IST261LitFit {
-
+Reader reader;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        ProfileController controller = new ProfileController();
-    
        
     }
     

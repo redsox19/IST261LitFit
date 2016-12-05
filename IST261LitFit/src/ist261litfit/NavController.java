@@ -5,6 +5,10 @@
  */
 package ist261litfit;
 import java.util.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.*;
+
 /**
  *
  * @author Dan
@@ -17,7 +21,10 @@ public class NavController {
     private LogListUI logUI;
     private FoodLogList logList; // list of foodLogs
     private FoodLog searchLog; // log that was found in search
- 
+    
+    Gson gson = new Gson();
+    Reader reader;
+    
     
     public NavController(ProfileController proCont){
         this.profileController = proCont;
@@ -29,7 +36,11 @@ public class NavController {
         this.view.addFoodLog("First Log", foodLogNumber);
         this.logList = new FoodLogList();
         this.logList.addLogToList(foodLog);
-
+        
+        File data = new File("data.txt");
+        if(data.exists()){
+        logList = gson.fromJson(reader, FoodLogList.class);
+        }
     }
     
     public void createFood(String foodName, int calories, int carbs, int fat, int protein){
@@ -85,9 +96,16 @@ public class NavController {
       }
    }
     
-    public void saveLog(){
-        
-         }
+    
+    //Save food logs
+    public void gsonSave() throws IOException{
+  try (FileWriter writer = new FileWriter("logs.txt")) {
+
+            gson.toJson(logList, writer);
+            
+        } catch (IOException e) {
+        }
+    }
     
     
 }

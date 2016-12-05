@@ -5,6 +5,10 @@
  */
 package ist261litfit;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author drf5180
@@ -193,6 +197,11 @@ public class ProfileUI extends javax.swing.JFrame {
         this.controller.calculateBMI();
         this.controller.hideProfileUI();
         this.controller.createNavController();
+        try {
+            this.controller.profileSave();
+        } catch (IOException ex) {
+            Logger.getLogger(NavUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
