@@ -99,11 +99,10 @@ public class NavController {
     
     //Save food logs
     public void gsonSave() throws IOException{
-  try (FileWriter writer = new FileWriter("logs.txt")) {
-
-            gson.toJson(logList, writer);
-            
-        } catch (IOException e) {
+        try (FileWriter writer = new FileWriter("logs.txt")) {
+            gson.toJson(logList, writer);            
+        } 
+        catch (IOException e) {
         }
     }
     

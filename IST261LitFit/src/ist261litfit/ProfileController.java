@@ -21,8 +21,9 @@ public class ProfileController {
     Gson gson = new Gson();
   
     public ProfileController(){
-       this.profileUI = new ProfileUI(this);
+      this.profileUI = new ProfileUI(this);
       profileUI.setVisible(true);
+      
       File data = new File("data.txt");
         if(data.exists()){
         profile = gson.fromJson(reader, Profile.class);
@@ -49,9 +50,7 @@ public class ProfileController {
     
      public void profileSave() throws IOException{
         try (FileWriter writer = new FileWriter("profile.txt")) {
-
-            gson.toJson(profile, writer);
-            
+            gson.toJson(profile, writer);            
         } catch (IOException e) {
         }
     }

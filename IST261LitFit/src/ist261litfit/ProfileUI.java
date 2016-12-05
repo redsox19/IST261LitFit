@@ -199,7 +199,8 @@ public class ProfileUI extends javax.swing.JFrame {
         this.controller.createNavController();
         try {
             this.controller.profileSave();
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) {
             Logger.getLogger(NavUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

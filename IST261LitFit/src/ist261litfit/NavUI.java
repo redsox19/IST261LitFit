@@ -256,9 +256,10 @@ public class NavUI extends javax.swing.JFrame {
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-         try {
+        try {
             this.controller.gsonSave();
-        } catch (IOException ex) {
+        }
+        catch (IOException ex) {
             Logger.getLogger(NavUI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
